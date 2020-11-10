@@ -11,6 +11,7 @@
 | first_name      | string  | null: false               |
 | family_kana     | string  | null: false               |
 | first_kana      | string  | null: false               |
+| gender_id       | integer | null: false               |
 | age             | integer | null: false               |
 | occupation_id   | integer | null: false               |
 | ability         | text    | null: false               |

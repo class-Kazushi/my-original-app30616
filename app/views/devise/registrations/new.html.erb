@@ -1,0 +1,85 @@
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+
+<%= render "shared/third_header" %>
+
+<div class="form-group sign-form">
+  <%= form_with model: @user, url: user_registration_path, class: 'sign-user', local: true do |f| %>
+    <%= render "shared/error_messages", model: f.object %>
+
+    <div class="sign-input">
+      <div class="sign-name">
+        <%= f.label :"ニックネーム" %><br />
+        <%= f.text_field :nickname , autofocus: true, autocomplete: "nickname", class: "form-control  name-form" %>
+      </div>
+
+      <div class="sign-email">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      </div>
+
+      <div class="sign-password">
+        <%= f.label :"パスワード" %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+      </div>
+
+      <div class="sign-password-c">
+        <%= f.label :"パスワード(確認用)" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+      </div>
+
+      <div class="row sign-family-name">
+        <div class="col">
+          <%= f.label :"名字" %><br />
+          <%= f.text_field :family_name , autofocus: true, autocomplete: "family_name", class: "form-control" %>
+        </div>
+        <div class="col">
+          <%= f.label :"名前" %><br />
+          <%= f.text_field :first_name , autofocus: true, autocomplete: "first_name", class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="row sign-family-kana">
+        <div class="col">
+          <%= f.label :"フリガナ(名字)" %><br />
+          <%= f.text_field :family_kana , autofocus: true, autocomplete: "family_kana", class: "form-control" %>
+        </div>
+        <div class="col">
+          <%= f.label :"フリガナ(名前)" %><br />
+          <%= f.text_field :first_kana , autofocus: true, autocomplete: "first_kana", class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="sign-gender">
+        <%= f.label :"性別" %><br />
+        <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"genre-select form-control"}) %>
+      </div>
+
+      <div class="sign-age">
+        <%= f.label :"ご年齢" %><br />
+        <%= f.number_field :age, autofocus: true, class: "form-control" %>
+      </div>
+
+      <div class="sign-occupation">
+        <%= f.label :"職業" %><br />
+        <%= f.collection_select(:occupation_id, Occupation.all, :id, :name, {}, {class:"genre-select form-control"}) %>
+      </div>
+
+      <div class="sign-ability">
+        <%= f.label :"特技や資格・経験など" %><br />
+        <%= f.text_area :ability, autofocus: true, autocomplete: "ability", class: "form-control" %>
+      </div>
+
+      <div class="sign-introduction">
+        <%= f.label :"自己PR(自由記入欄)" %><br />
+        <%= f.text_area :introduction, autofocus: true, autocomplete: "introduction", class: "form-control" %>
+      </div>
+
+      <div class="sign-submit">
+        <%= f.submit "新規登録", class: "btn btn-primary sign-button" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= render "shared/footer" %>
+

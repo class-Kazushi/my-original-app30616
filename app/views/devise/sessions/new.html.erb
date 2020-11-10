@@ -1,0 +1,25 @@
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+
+<%= render "shared/second_header" %>
+
+<div class='form-group login-main'>
+  <%= form_with model: @user, url: user_session_path, class: 'login-user', local: true do |f| %>
+    <%= render "shared/error_messages", model: f.object %>
+
+    <div class="login-email">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
+
+    <div class="login-password">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+    </div>
+
+    <div class="login-submit">
+      <%= f.submit "ログイン", class: "btn btn-primary login-button" %>
+    </div>
+  <% end %>
+</div>
+
+<%= render "shared/footer" %>
