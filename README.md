@@ -36,8 +36,9 @@ has_one :card
 | job             | text       | null: false       |
 | want            | text       | null: false       |
 | period          | date       | null: false       |
-| reword          | integer    | null: false       |
-| region          | text       | null: false       |
+| reword          | text       | null: false       |
+| prefecture_id   | integer    | null: false       |
+| city            | string     | null: false       |
 | people          | integer    | null: false       |
 | donation        | integer    | null: false       |
 

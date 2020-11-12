@@ -1,0 +1,110 @@
+.show-request{
+  display: flex;
+  justify-content: center;
+  overflow: scroll;
+  padding: 100px 0 200px;
+}
+
+.show-title{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  margin: 40px 0 40px 250px;
+  font-size: 35px;
+  color: white;
+}
+
+.under{
+  border-bottom: 3px solid white;
+}
+
+.show-img{
+  margin: 0 0 20px 70px;
+}
+
+.show-table{
+  width: 800px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: white;
+}
+
+.show-nickname{
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+.content-name{
+  width: 200px;
+}
+
+.show-button{
+  position: absolute;
+  bottom: 100px;
+  position: fixed;
+}
+
+.show-btn-lists{
+  display: flex;
+  z-index: 1;
+}
+
+.edit-btn{
+  position: relative;
+  margin-right: 100px;
+}
+
+.edit-btn-text{
+  position: absolute;
+  left: 60px;
+  bottom: 40px;
+  color: black;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.destroy-btn{
+  position: relative;
+  margin-left: 100px;
+}
+
+.destroy-btn-text{
+  position: absolute;
+  left: 60px;
+  bottom: 40px;
+  color: black;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.get-btn{
+  position: relative;
+}
+
+.get-btn-text{
+  position: absolute;
+  left: 60px;
+  bottom: 40px;
+  color: black;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.donation-btn{
+  position: relative;
+  margin: 0 30px;
+}
+
+.donation-btn-text{
+  position: absolute;
+  left: 55px;
+  bottom: 40px;
+  color: black;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.spread-btn{
+  position: relative;
+}
+
+.spread-btn-text{
+  position: absolute;
+  left: 60px;
+  bottom: 40px;
+  color: black;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}

@@ -1,7 +1,64 @@
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@800&display=swap" rel="stylesheet">
+
 <%= render "shared/header" %>
 
 <div class='request-main'>
-  <h1>Requestsトップページ</h1>
+  <div class="request-index">
+    <ul class='request-lists'>
+      <% if @requests %>
+        <% @requests.each do |request| %>
+          <li class='request-list'>
+            <%= link_to request_path(request) do %>
+              <div class='request-img-content'>
+                <%= image_tag 'index_paper_2.png' ,size: '280x300' ,class: "request-content" %>
+                <%= image_tag request.image ,size: '200x100' ,class: "request-img" %>
+                <span class="request-title">
+                  <strong><%= request.title %></strong>
+                </span>
+                <span class="request-prefecture">
+                  <%= request.prefecture.name %>
+                </span>
+                <span class="request-period">
+                  <strong>募集終了: </strong><%= request.period %>
+                </span>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      <% else %>
+        <li class='sample-list'>
+          <%= image_tag 'index_paper_2.png' ,size: '280x300' ,class: "request-sample" %>
+          <%= image_tag 'IMG_4693.png' ,size: '200x100' ,class: "sea-sample" %>
+          <span class="sample-title">
+            <strong>海掃除の参加者募集！！</strong>
+          </span>
+          <span class="sample-prefecture">
+            静岡県
+          </span>
+          <span class="sample-period">
+            募集終了: 2021/5/30
+          </span>
+        </li>
+        <li class='sample-list-2'>
+          <%= image_tag 'index_paper_2.png' ,size: '280x300' ,class: "request-sample" %>
+        </li>
+        <li class='sample-list-3'>
+          <%= image_tag 'index_paper_2.png' ,size: '280x300' ,class: "request-sample" %>
+        </li>
+        <li class='sample-list-4'>
+          <%= image_tag 'index_paper_2.png' ,size: '280x300' ,class: "request-sample" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class='request-btn'>
+    <a href="/requests/new">
+      <span class='request-btn-text'>依頼作成</span>
+      <%= image_tag 'cork_board_paper.png' , size: '185x100' ,class: "request-btn-png" %>
+    </a>
+  </div>
+
 </div>
 
 <%= render "shared/footer" %>

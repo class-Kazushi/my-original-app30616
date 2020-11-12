@@ -19,6 +19,8 @@ class User < ApplicationRecord
     validates :introduction
   end
 
+  has_many :requests
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender
   belongs_to :occupation

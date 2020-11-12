@@ -1,0 +1,125 @@
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@800&display=swap" rel="stylesheet">
+
+<%= render "shared/show_header" %>
+
+<div class="show-request">
+  <div class="show-contents">
+    <%= image_tag @request.image ,size: '600x350' ,class: "show-img" %>
+    <div class="show-title">
+      <span class="under"><%= @request.title %></span>
+    </div>
+    <table class="table table-bordered show-table">
+      <tbody>
+        <tr>
+          <th scope="row"> 依頼者</th>
+          <td><%= link_to @request.user.nickname, "", class: "show-nickname" %></td>
+        </tr>
+        <tr>
+          <th scope="row" class="content-name">カテゴリー</th>
+          <td><%= @request.category.name %></td>
+        </tr>
+        <tr>
+          <th scope="row">依頼内容</th>
+          <td><%= @request.content %></td>
+        </tr>
+        <tr>
+          <th scope="row">URL・SNSアカウント</th>
+          <td><%= @request.url %></td>
+        </tr>
+        <tr>
+          <th scope="row">活動内容</th>
+          <td><%= @request.job %></td>
+        </tr>
+        <tr>
+          <th scope="row">求める人物</th>
+          <td><%= @request.want %></td>
+        </tr>
+        <tr>
+          <th scope="row">募集期間</th>
+          <td><%= @request.period %> 〆切</td>
+        </tr>
+        <tr>
+          <th scope="row">報酬・給与</th>
+          <td><%= @request.reword %></td>
+        </tr>
+        <tr>
+          <th scope="row">活動場所</th>
+          <td><%= @request.prefecture.name %>： <%= @request.city %></td>
+        </tr>
+        <tr>
+          <th scope="row">募集人数</th>
+          <td><%= @request.people %>人</td>
+        </tr>
+        <tr>
+          <th scope="row">資金援助目標額</th>
+          <td><%= @request.donation %>円</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="show-button">
+    <ul class="show-btn-lists">
+      <% if @request.user == current_user %>
+        <li class="edit-btn">
+          <%= link_to "" do %>
+            <%= image_tag 'book_note_empty.png' , size: '185x100', class: "edit-btn-png" %>
+            <span class='edit-btn-text'>編集する</span>
+          <% end %>
+        </li>
+        <li class="destroy-btn">
+          <%= link_to "" do %>
+            <%= image_tag 'book_note_empty.png' , size: '185x100', class: "edit-btn-png" %>
+            <span class='destroy-btn-text'>削除する</span>
+          <% end %>
+        </li>
+      <% elsif user_signed_in? && @request.donation != 0 && @request.people != 0 %>
+        <li class="get-btn">
+          <%= link_to "" do %>
+            <%= image_tag 'book_note_empty.png' , size: '185x100', class: "get-btn-png" %>
+            <span class='get-btn-text'>応募する</span>
+          <% end %>
+        </li>
+        <li class="donation-btn">
+          <%= link_to "" do %>
+            <%= image_tag 'book_note_empty.png' , size: '185x100', class: "donation-btn-png" %>
+            <span class='donation-btn-text'>資金援助する</span>
+          <% end %>
+        </li>
+        <li class="spread-btn">
+          <%= link_to "" do %>
+            <%= image_tag 'book_note_empty.png' , size: '185x100', class: "spread-btn-png" %>
+            <span class='spread-btn-text'>拡散する</span>
+          <% end %>
+        </li>
+      <% elsif user_signed_in? && @request.donation == 0 %>
+        <li class="donation-btn">
+          <%= link_to "" do %>
+            <%= image_tag 'book_note_empty.png' , size: '185x100', class: "get-btn-png" %>
+            <span class='get-btn-text'>応募する</span>
+          <% end %>
+        </li>
+        <li class="spread-btn">
+          <%= link_to "" do %>
+            <%= image_tag 'book_note_empty.png' , size: '185x100', class: "spread-btn-png" %>
+            <span class='spread-btn-text'>拡散する</span>
+          <% end %>
+        </li>
+      <% elsif user_signed_in? && @request.people == 0 %>
+        <li class="donation-btn">
+          <%= link_to "" do %>
+            <%= image_tag 'book_note_empty.png' , size: '185x100', class: "donation-btn-png" %>
+            <span class='donation-btn-text'>資金援助する</span>
+          <% end %>
+        </li>
+        <li class="spread-btn">
+          <%= link_to "" do %>
+            <%= image_tag 'book_note_empty.png' , size: '185x100', class: "spread-btn-png" %>
+            <span class='spread-btn-text'>拡散する</span>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<%= render "shared/footer" %> 
