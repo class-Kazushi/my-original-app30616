@@ -24,15 +24,21 @@ class RequestsController < ApplicationController
   end
 
   def edit
-    @request = Request.find(params[:id])
   end
 
   def update
-    @request = Request.find(params[:id])
     if @request.update(request_params)
       redirect_to request_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @request.destroy
+      redirect_to root_path
+    else
+      render :show
     end
   end
 

@@ -67,7 +67,7 @@
           <% end %>
         </li>
         <li class="destroy-btn">
-          <%= link_to "" do %>
+          <%= link_to request_path(@request), method: :delete do %>
             <%= image_tag 'book_note_empty.png' , size: '185x100', class: "edit-btn-png" %>
             <span class='destroy-btn-text'>削除する</span>
           <% end %>
