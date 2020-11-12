@@ -12,6 +12,11 @@
               <div class='request-img-content'>
                 <%= image_tag 'index_paper_2.png' ,size: '280x300' ,class: "request-content" %>
                 <%= image_tag request.image ,size: '200x100' ,class: "request-img" %>
+
+                <% if @today == request.period.tomorrow %>
+                  <%= image_tag 'mark_shimekiri.png' ,size: '220x220',class: "time-over-img" %>
+                <% end %>
+
                 <span class="request-title">
                   <strong><%= request.title %></strong>
                 </span>

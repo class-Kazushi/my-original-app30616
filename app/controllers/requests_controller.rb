@@ -1,9 +1,11 @@
 class RequestsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :move_to_index, only: [:edit, :update, :destroy]
+  before_action :period_block, only: [:edit, :update]
 
   def index
     @requests = Request.order('created_at DESC')
+    @today = Date.today
   end
 
   def new
@@ -21,6 +23,7 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    @today = Date.today
   end
 
   def edit
@@ -50,6 +53,13 @@ class RequestsController < ApplicationController
   def move_to_index
     @request = Request.find(params[:id])
     unless @request.user == current_user
+      redirect_to action: :index
+    end
+  end
+
+  def period_block
+    @today = Date.today
+    if @today == @request.period.tomorrow
       redirect_to action: :index
     end
   end

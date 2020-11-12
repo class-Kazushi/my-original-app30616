@@ -5,6 +5,11 @@
 <div class="show-request">
   <div class="show-contents">
     <%= image_tag @request.image ,size: '600x350' ,class: "show-img" %>
+
+    <% if @today == @request.period.tomorrow %>
+      <%= image_tag 'mark_shimekiri.png' ,size: '470x470' ,class: "end-img" %>
+    <% end %>
+
     <div class="show-title">
       <span class="under"><%= @request.title %></span>
     </div>
@@ -59,7 +64,18 @@
   </div>
   <div class="show-button">
     <ul class="show-btn-lists">
-      <% if @request.user == current_user %>
+      <% if @today == @request.period.tomorrow && @request.user != current_user %>
+        <div class="end-message">
+          <strong>他のご依頼をご覧ください！！！！</strong>
+        </div>
+      <% elsif @request.user == current_user && @today == @request.period.tomorrow %>
+        <li class="destroy-btn">
+          <%= link_to request_path(@request), method: :delete do %>
+            <%= image_tag 'book_note_empty.png' , size: '185x100', class: "edit-btn-png" %>
+            <span class='destroy-btn-text'>削除する</span>
+          <% end %>
+        </li>
+      <% elsif @request.user == current_user %>
         <li class="edit-btn">
           <%= link_to edit_request_path(@request) do %>
             <%= image_tag 'book_note_empty.png' , size: '185x100', class: "edit-btn-png" %>

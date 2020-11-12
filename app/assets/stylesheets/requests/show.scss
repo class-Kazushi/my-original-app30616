@@ -20,6 +20,12 @@
   margin: 0 0 20px 70px;
 }
 
+.end-img{
+  z-index: 1;
+  position: absolute;
+  left: 220px;
+}
+
 .show-table{
   width: 800px;
   font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -44,6 +50,11 @@
 .show-btn-lists{
   display: flex;
   z-index: 1;
+}
+
+.end-message{
+  color: white;
+  font-size: 40px;
 }
 
 .edit-btn{

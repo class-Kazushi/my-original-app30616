@@ -36,6 +36,13 @@ body{
   margin: 0 auto;
 }
 
+.time-over-img{
+  position: absolute;
+  z-index: 3;
+  left: 30px;
+  top: 30px;
+}
+
 .request-title{
   position: absolute;
   font-family: 'M PLUS Rounded 1c', sans-serif;
