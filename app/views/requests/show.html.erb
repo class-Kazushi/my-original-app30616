@@ -61,7 +61,7 @@
     <ul class="show-btn-lists">
       <% if @request.user == current_user %>
         <li class="edit-btn">
-          <%= link_to "" do %>
+          <%= link_to edit_request_path(@request) do %>
             <%= image_tag 'book_note_empty.png' , size: '185x100', class: "edit-btn-png" %>
             <span class='edit-btn-text'>編集する</span>
           <% end %>

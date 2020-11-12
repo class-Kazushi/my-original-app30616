@@ -1,0 +1,88 @@
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@800&display=swap" rel="stylesheet">
+
+<%= render "shared/show_header" %>
+
+<div class='new-main'>
+  <div class="form-group new-form">
+    <%= form_with model: @request, class: 'new-request', local: true do |f| %>
+      <%= render "shared/error_messages", model: f.object %>
+
+      <div class="new-input">
+        <div class="new-title">
+          <%= f.label :"タイトル" %><br />
+          <%= f.text_field :title, autofocus: true, autocomplete: "title", placeholder:"10文字以内", class: "form-control  title-form" %>
+        </div>
+
+        <div class="new-image">
+          <%= f.label :"画像" %><br />
+          <%= f.file_field :image, class:"form-control-file image-form" %>
+        </div>
+
+        <div class="new-category">
+            <%= f.label :"カテゴリー" %><br />
+            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "category-select form-control"}) %>
+        </div>
+
+        <div class="new-content">
+          <%= f.label :"依頼内容" %><br />
+          <%= f.text_area :content, autofocus: true, autocomplete: "content", class: "form-control content-form" %>
+        </div>
+
+        <div class="new-url">
+          <%= f.label :"ホームページ・SNSアカウント等のURL" %><br />
+          <%= f.text_field :url, autofocus: true, autocomplete: "url", class: "form-control  url-form" %>
+        </div>
+
+        <div class="new-job">
+          <%= f.label :"活動内容" %><br />
+          <%= f.text_area :job, autofocus: true, autocomplete: "job", class: "form-control job-form" %>
+        </div>
+
+        <div class="new-want">
+          <%= f.label :"求める人物" %><br />
+          <%= f.text_area :want, autofocus: true, autocomplete: "want", placeholder:"ex) ボランティア経験がある・未経験でも興味のある方", class: "form-control want-form" %>
+        </div>
+
+        <div class="form-row new-region">
+          <div class="col-md-3 new-prefecture">
+            <%= f.label :"活動地域" %><br />
+            <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class: "prefecture-select form-control"}) %>
+          </div>
+          <div class="col-md-7 new-city">
+            <%= f.label :"活動場所" %><br />
+            <%= f.text_field :city, autofocus: true, autocomplete: "city", placeholder:"ex) ○○公園（××市△△123-45）",class: "form-control  city-form" %>
+          </div>
+        </div>
+
+        <div class="new-reword">
+          <%= f.label :"報酬・給与" %><br />
+          <%= f.text_area :reword, autofocus: true, autocomplete: "reword", class: "form-control reword-form" %>
+        </div>
+
+        <div class="new-period">
+          <%= f.label :"募集期限" %><br />
+          <%= f.date_field :period, autofocus: true, autocomplete: "period", class: "form-control period-form" %>
+        </div>
+
+        <div class="new-people">
+          <%= f.label :"募集人数" %><br />
+          <%= f.label :"(資金援助のみご希望の場合は0を入力してください)"%><br />
+          <%= f.text_field :people, autofocus: true, autocomplete: "people", placeholder:"ex) 100", class: "form-control people-form" %>
+        </div>
+
+        <div class="new-donation">
+          <%= f.label :"募集金額" %><br />
+          <%= f.label :"(資金援助がご不要の場合は0を入力してください)"%><br />
+          <%= f.text_field :donation, autofocus: true, autocomplete: "donation", placeholder:"ex) 200000", class: "form-control donation-form" %>
+        </div>
+
+        <div class="request-submit">
+          <%= f.submit "変更する", class: "btn btn-primary request-button" %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
