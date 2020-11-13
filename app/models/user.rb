@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
+  has_many :requests
 
   with_options presence: true do
     validates :nickname
@@ -18,8 +20,6 @@ class User < ApplicationRecord
     validates :ability
     validates :introduction
   end
-
-  has_many :requests
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender

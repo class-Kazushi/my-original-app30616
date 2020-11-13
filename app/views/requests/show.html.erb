@@ -6,7 +6,7 @@
   <div class="show-contents">
     <%= image_tag @request.image ,size: '600x350' ,class: "show-img" %>
 
-    <% if @today == @request.period.tomorrow %>
+    <% if @today > @request.period.tomorrow %>
       <%= image_tag 'mark_shimekiri.png' ,size: '470x470' ,class: "end-img" %>
     <% end %>
 
@@ -17,7 +17,7 @@
       <tbody>
         <tr>
           <th scope="row"> 依頼者</th>
-          <td><%= link_to @request.user.nickname, "", class: "show-nickname" %></td>
+          <td><%= link_to @request.user.nickname, "/users/#{@request.user.id}", class: "show-nickname" %></td>
         </tr>
         <tr>
           <th scope="row" class="content-name">カテゴリー</th>
@@ -64,11 +64,11 @@
   </div>
   <div class="show-button">
     <ul class="show-btn-lists">
-      <% if @today == @request.period.tomorrow && @request.user != current_user %>
+      <% if @today > @request.period.tomorrow && @request.user != current_user %>
         <div class="end-message">
           <strong>他のご依頼をご覧ください！！！！</strong>
         </div>
-      <% elsif @request.user == current_user && @today == @request.period.tomorrow %>
+      <% elsif @request.user == current_user && @today > @request.period.tomorrow %>
         <li class="destroy-btn">
           <%= link_to request_path(@request), method: :delete do %>
             <%= image_tag 'book_note_empty.png' , size: '185x100', class: "edit-btn-png" %>

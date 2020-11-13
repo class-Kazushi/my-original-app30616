@@ -64,11 +64,13 @@ belongs_to :user
 belongs_to :request
 
 
-## questionsテーブル
+## appliesテーブル
 
 | Column          | Type       | Option            |
 |-----------------|------------|-------------------|
-| text            | text       | null: false       |
+| phone_num       | string     |                   |
+| reason          | text       | null: false       |
+| question        | text       |                   |
 | request         | references | foreign_key: true |
 | user            | references | foreign_key: true |
 

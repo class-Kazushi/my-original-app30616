@@ -1,0 +1,36 @@
+.user-show{
+  display: flex;
+  justify-content: center;
+  overflow: scroll;
+  padding: 100px 0 200px;
+}
+
+.u-show-nickname{
+  margin-bottom: 20px;
+}
+
+.user-nickname{
+  color: white;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 30px;
+}
+
+.nickname-support{
+  color: white;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 17px;
+}
+
+.user-table{
+  width: 800px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: white;
+}
+
+.element-title{
+  width: 200px;
+}
+
+.user-news{
+  margin-top: 70px;
+}
