@@ -38,11 +38,11 @@
                   <% elsif request.donation == 0 %>
                     <span class="situation-title">★現在の依頼状況★</span><br>
                     <br>
-                    <span class="situation-people">応募人数： 人</span>
+                    <span class="situation-people">応募人数：<%= request.apply_ids.length %>人</span>
                   <% else %>
                     <span class="situation-title">★現在の依頼状況★</span><br>
                     <br>
-                    <span class="situation-people">応募人数： 人</span><br>
+                    <span class="situation-people">応募人数： <%= request.apply_ids.length %>人</span><br>
                     <span class="situation-donation">支援金： 円</span>
                   <% end %>
                 </div>

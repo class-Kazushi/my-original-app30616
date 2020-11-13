@@ -1,0 +1,35 @@
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@800&display=swap" rel="stylesheet">
+
+<%= render "shared/apply_header" %>
+
+<div class='apply-main'>
+  <div class="form-group new-form">
+    <%= form_with url: request_applies_path, class: 'new-request', local: true do |f| %>
+      <%= render "shared/error_messages", model: @apply %>
+
+      <div class="new-input">
+        <div class="new-title">
+          <%= f.label :"ご連絡先(電話番号)" %><br />
+          <%= f.text_field :phone_num, autofocus: true, autocomplete: "phone_num", placeholder:"電話でのご連絡をご希望の方のみ", class: "form-control  tel-form" %>
+        </div>
+
+        <div class="new-content">
+          <%= f.label :"応募理由・動機" %><br />
+          <%= f.text_area :reason, autofocus: true, autocomplete: "reason", placeholder:"必須項目", class: "form-control reason-form" %>
+        </div>
+
+        <div class="new-job">
+          <%= f.label :"依頼に対する質問やご不明点等" %><br />
+          <%= f.text_area :question, autofocus: true, autocomplete: "question", placeholder:"もしあればご入力ください", class: "form-control question-form" %>
+        </div>
+
+        <div class="request-submit">
+          <%= f.submit "応募する", class: "btn btn-primary request-button" %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

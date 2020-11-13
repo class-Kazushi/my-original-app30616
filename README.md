@@ -20,8 +20,8 @@
 ### Association
 
 has_many :requests
-has_many :questions
-has_one :card
+has_many :applies
+has_one :support
 
 
 ## requestsテーブル
@@ -45,18 +45,17 @@ has_one :card
 ### Association
 
 belongs_to :user
-has_many :questions
-has_many :cards
+has_many :applies
+has_many :supports
 
 
-## cardsテーブル
+## supportsテーブル
 
 | Column          | Type       | Option            |
 |-----------------|------------|-------------------|
-| card_token      | string     | null: false       |
-| customer_token  | string     | null: false       |
 | price           | integer    | null: false       |
 | user            | references | foreign_key: true |
+| request         | references | foreign_key: true|
 
 ### Association
 

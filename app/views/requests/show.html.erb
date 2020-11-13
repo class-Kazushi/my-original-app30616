@@ -90,7 +90,7 @@
         </li>
       <% elsif user_signed_in? && @request.donation != 0 && @request.people != 0 %>
         <li class="get-btn">
-          <%= link_to "" do %>
+          <%= link_to new_request_apply_path(@request) do %>
             <%= image_tag 'book_note_empty.png' , size: '185x100', class: "get-btn-png" %>
             <span class='get-btn-text'>応募する</span>
           <% end %>
@@ -109,7 +109,7 @@
         </li>
       <% elsif user_signed_in? && @request.donation == 0 %>
         <li class="donation-btn">
-          <%= link_to "" do %>
+          <%= link_to new_request_apply_path(@request) do %>
             <%= image_tag 'book_note_empty.png' , size: '185x100', class: "get-btn-png" %>
             <span class='get-btn-text'>応募する</span>
           <% end %>

@@ -3,6 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_many :requests
+  has_many :applies
 
   with_options presence: true do
     validates :nickname
