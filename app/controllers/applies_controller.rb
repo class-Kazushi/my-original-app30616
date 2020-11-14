@@ -7,7 +7,7 @@ class AppliesController < ApplicationController
   def create
     @apply = Apply.new(apply_params)
     if @apply.save
-      redirect_to root_path, notice: "応募が完了しました！！"
+      redirect_to root_path
     else
       render :new
     end

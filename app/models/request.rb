@@ -1,10 +1,12 @@
 class Request < ApplicationRecord
   belongs_to :user
   has_many :applies
+  has_many :supports
   has_one_attached :image
 
   with_options presence: true do
     validates :title, length: { maximum: 10 }
+    validates :image
     validates :category_id, numericality: { other_than: 1 }
     validates :content
     validates :job
@@ -15,7 +17,6 @@ class Request < ApplicationRecord
     validates :city
     validates :people, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 999 }
     validates :donation, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 9999999 }
-    validates :image
   end
 
   extend ActiveHash::Associations::ActiveRecordExtensions

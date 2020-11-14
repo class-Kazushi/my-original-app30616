@@ -55,7 +55,7 @@ has_many :supports
 |-----------------|------------|-------------------|
 | price           | integer    | null: false       |
 | user            | references | foreign_key: true |
-| request         | references | foreign_key: true|
+| request         | references | foreign_key: true |
 
 ### Association
 

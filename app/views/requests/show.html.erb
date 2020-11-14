@@ -61,6 +61,20 @@
         </tr>
       </tbody>
     </table>
+
+    <div class="show-situation">
+      <span class="under">ご依頼への支援状況</span>
+      <div class="people-situation">
+        <% if @request.people != 0 %>
+          <span class="under">応募人数： <%= @request.apply_ids.length %>人</span>
+        <% end %>
+      </div>
+      <div class="donation-situation">
+        <% if @request.donation != 0 %>
+          <span class="under">支援金総額： <%= @donation.to_s(:delimited, delimiter: ',') %>円</span>
+        <% end %>
+      </div>
+    </div>
   </div>
   <div class="show-button">
     <ul class="show-btn-lists">
@@ -96,7 +110,7 @@
           <% end %>
         </li>
         <li class="donation-btn">
-          <%= link_to "" do %>
+          <%= link_to request_supports_path(@request) do %>
             <%= image_tag 'book_note_empty.png' , size: '185x100', class: "donation-btn-png" %>
             <span class='donation-btn-text'>資金援助する</span>
           <% end %>
@@ -122,7 +136,7 @@
         </li>
       <% elsif user_signed_in? && @request.people == 0 %>
         <li class="donation-btn">
-          <%= link_to "" do %>
+          <%= link_to request_supports_path(@request) do %>
             <%= image_tag 'book_note_empty.png' , size: '185x100', class: "donation-btn-png" %>
             <span class='donation-btn-text'>資金援助する</span>
           <% end %>

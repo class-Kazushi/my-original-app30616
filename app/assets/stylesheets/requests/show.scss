@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   overflow: scroll;
-  padding: 100px 0 200px;
+  padding: 100px 0 300px;
 }
 
 .show-title{
@@ -39,6 +39,27 @@
 
 .content-name{
   width: 200px;
+}
+
+.show-situation{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  margin: 40px 0 40px 250px;
+  font-size: 35px;
+  color: white;
+}
+
+.people-situation{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  margin-top: 20px;
+  font-size: 25px;
+  color: white;
+}
+
+.donation-situation{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  margin-top: 20px;
+  font-size: 25px;
+  color: white;
 }
 
 .show-button{

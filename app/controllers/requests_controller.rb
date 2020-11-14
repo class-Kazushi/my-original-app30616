@@ -24,6 +24,8 @@ class RequestsController < ApplicationController
   def show
     @request = Request.find(params[:id])
     @today = Date.today
+    @donation = @request.supports.sum(:price)
+    @apply = @request.applies.includes(:user)
   end
 
   def edit

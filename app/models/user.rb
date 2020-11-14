@@ -4,6 +4,7 @@ class User < ApplicationRecord
          
   has_many :requests
   has_many :applies
+  has_one :support
 
   with_options presence: true do
     validates :nickname

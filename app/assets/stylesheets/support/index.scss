@@ -1,0 +1,48 @@
+.support-main{
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+  color: white;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 15px;
+  padding: 100px 0;
+}
+
+.form-wrap{
+  display: flex;
+  flex-direction: column;
+}
+
+.price{
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.input-expiration-date-wrap{
+  display: flex;
+}
+
+.number{
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.cvc{
+  width: 350px;
+  margin-bottom: 20px;
+}
+
+.exp_month{
+  width: 100px;
+  resize: none;
+}
+
+.exp_year{
+  width: 100px;
+  resize: none;
+}
+
+.button{
+  margin-top: 20px;
+  width: 100px;
+}

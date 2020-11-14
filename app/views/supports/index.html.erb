@@ -1,0 +1,35 @@
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@800&display=swap" rel="stylesheet">
+
+<%= render "shared/support_header" %>
+
+<div class="support-main">
+  <div class="form-group new-form">
+    <%= form_with  url: request_supports_path , id: 'charge-form', class: 'card-form',local: true do |f| %>
+      <%= render "shared/error_messages", model: @support %>
+      <div class='form-wrap'>
+        <%= f.label :price, "いくら支援しますか？" %>
+        <%= f.text_field :price, class:"price", placeholder:"ex)2000(円)" %>
+      </div>
+      <div class='form-wrap'>
+        <%= f.label :number,  "カード番号" %>
+        <%= f.text_field :number, class:"number", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
+      </div>
+      <div class='form-wrap'>
+        <%= f.label :cvc ,"ＣＶＣ" %>
+        <%= f.text_field :cvc, class:"cvc", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
+      </div>
+      <div class='form-wrap'>
+        <p>有効期限</p>
+        <div class='input-expiration-date-wrap'>
+          <%= f.text_field :exp_month, class:"exp_month", placeholder:"例)3" %>
+          <p>月</p>
+          <%= f.text_field :exp_year, class:"exp_year", placeholder:"例)24" %>
+          <p>年</p>
+        </div>
+      </div>
+      <%= f.submit "援助する" ,class:"btn btn-primary button" %>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %> 
