@@ -5,4 +5,5 @@ class Apply < ApplicationRecord
 
   validates :reason, presence: true
   validates :phone_num, format: { with: /\A\d{10}$|^\d{11}\z/ }, allow_blank: true
+  validates :user_id, uniqueness: { scope: :request_id }
 end

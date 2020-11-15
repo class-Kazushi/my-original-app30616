@@ -18,12 +18,12 @@ RSpec.describe Apply, type: :model do
     end
   
     context '応募ができない時' do
-      it "userが紐づいていないと登録できないこと" do
+      it "userが紐づいていないと応募できないこと" do
         @apply.user = nil
         @apply.valid?
         expect(@apply.errors.full_messages).to include("User must exist")
       end
-      it "requestが紐づいていないと登録できないこと" do
+      it "requestが紐づいていないと応募できないこと" do
         @apply.request = nil
         @apply.valid?
         expect(@apply.errors.full_messages).to include("Request must exist")
