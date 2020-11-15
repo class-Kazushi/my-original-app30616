@@ -57,7 +57,7 @@
         </tr>
         <tr>
           <th scope="row">資金援助目標額</th>
-          <td><%= @request.donation %>円</td>
+          <td><%= @request.donation.to_s(:delimited, delimiter: ',') %>円</td>
         </tr>
       </tbody>
     </table>

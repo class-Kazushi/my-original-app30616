@@ -7,7 +7,7 @@ class AppliesController < ApplicationController
   def create
     @apply = Apply.new(apply_params)
     if @apply.save
-      redirect_to root_path
+      redirect_to request_path(@apply.request)
     else
       render :new
     end

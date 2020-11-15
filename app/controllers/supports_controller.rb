@@ -9,7 +9,7 @@ class SupportsController < ApplicationController
     if @support.valid?
       pay_support
       @support.save
-      return redirect_to root_path
+      return redirect_to request_path(@support.request)
     else
       render action: :index
     end
