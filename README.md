@@ -64,14 +64,21 @@ https://our-board30616.herokuapp.com/
 ・投稿された依頼案件に応募する
 https://i.gyazo.com/b121aefffd67ffeecf7bb4b5229d3f0e.gif
 
-・
+・依頼への資金援助
+https://i.gyazo.com/51a331793797ebbc7c82a4ec510a08da.gif
+
+・依頼投稿イメージ
+https://i.gyazo.com/fea04841e7064e0cf67e4820031fe0c5.gif
 
 
 
 ## 実装予定の機能
 ・依頼検索機能
+ カテゴリーや都道府県ごとで検索、または検索したワードにマッチする依頼投稿のみ表示する機能
 ・依頼拡散機能
+ 投稿された依頼をさらにSNSでフォロワーに向けて投稿できる機能
 ・SNS認証機能
+ SNSアカウントでユーザー新規登録する機能
 
 ## データベース設計
 
