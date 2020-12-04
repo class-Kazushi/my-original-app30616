@@ -1,0 +1,36 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        email: メールアドレス
+        password: パスワード
+        family_name: 名字
+        first_name: 名前
+        family_kana: フリガナ（名字）
+        first_kana: フリガナ（名前）
+        gender_id: 性別
+        age: ご年齢
+        occupation_id: 職業
+        ability: 特技や資格・経験など
+        introduction: 自己PR
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid_email: は半角英数字と@が必要です
+            password:
+              invalid_password: は半角英数字混合で入力してください
+            family_name:
+              invalid_name: は全角ひらがな・カタカナ・漢字で入力してください
+            first_name:
+              invalid_name: は全角ひらがな・カタカナ・漢字で入力してください
+            family_kana:
+              invalid_kana: は全角カタカナで入力してください
+            first_kana:
+              invalid_kana: は全角カタカナで入力してください
+            gender_id:
+              invalid_id: を選択してください
+            occupation_id:
+              invalid_id: を選択してください
