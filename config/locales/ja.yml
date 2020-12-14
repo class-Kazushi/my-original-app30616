@@ -14,6 +14,20 @@ ja:
         occupation_id: 職業
         ability: 特技や資格・経験など
         introduction: 自己PR
+      request:
+        title: タイトル
+        image: 画像
+        category_id: カテゴリー
+        content: 依頼内容
+        url: SNSアカウント等のURL
+        job: 活動内容
+        want: 求める人物
+        period: 募集期限
+        reword: 報酬・給与
+        prefecture_id: 活動地域
+        city: 活動場所
+        people: 募集人数
+        donation: 募集金額
     errors:
       models:
         user:
@@ -33,4 +47,14 @@ ja:
             gender_id:
               invalid_id: を選択してください
             occupation_id:
+              invalid_id: を選択してください
+        request:
+          attributes:
+            image:
+              invalid_image: を選択してください
+            category_id:
+              invalid_id: を選択してください
+            period:
+              invalid_period: を選択してください
+            prefecture_id:
               invalid_id: を選択してください
