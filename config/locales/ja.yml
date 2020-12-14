@@ -69,3 +69,7 @@ ja:
           attributes:
             phone_num:
               invalid_phone_num: は数字で入力してください
+        support:
+          attributes:
+            price:
+              invalid_price_num: は数字で入力してください
