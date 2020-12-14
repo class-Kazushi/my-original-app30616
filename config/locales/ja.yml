@@ -28,6 +28,13 @@ ja:
         city: 活動場所
         people: 募集人数
         donation: 募集金額
+      apply:
+        phone_num: 電話番号
+        reason: 応募理由・動機
+        user_id: 応募者
+      support:
+        price: 支援金額
+        token: クレジットカード番号等
     errors:
       models:
         user:
@@ -58,3 +65,7 @@ ja:
               invalid_period: を選択してください
             prefecture_id:
               invalid_id: を選択してください
+        apply:
+          attributes:
+            phone_num:
+              invalid_phone_num: は数字で入力してください
