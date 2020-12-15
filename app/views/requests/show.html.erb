@@ -13,6 +13,11 @@
     <div class="show-title">
       <span class="under"><%= @request.title %></span>
     </div>
+
+    <% if user_signed_in? && @today <= @request.period %>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <% end %>
+
     <table class="table table-bordered show-table">
       <tbody>
         <tr>
@@ -115,12 +120,6 @@
             <span class='donation-btn-text'>資金援助する</span>
           <% end %>
         </li>
-        <li class="spread-btn">
-          <%= link_to "" do %>
-            <%= image_tag 'book_note_empty.png' , size: '185x100', class: "spread-btn-png" %>
-            <span class='spread-btn-text'>拡散する</span>
-          <% end %>
-        </li>
       <% elsif user_signed_in? && @request.donation == 0 %>
         <li class="donation-btn">
           <%= link_to new_request_apply_path(@request) do %>
@@ -128,23 +127,11 @@
             <span class='get-btn-text'>応募する</span>
           <% end %>
         </li>
-        <li class="spread-btn">
-          <%= link_to "" do %>
-            <%= image_tag 'book_note_empty.png' , size: '185x100', class: "spread-btn-png" %>
-            <span class='spread-btn-text'>拡散する</span>
-          <% end %>
-        </li>
       <% elsif user_signed_in? && @request.people == 0 %>
         <li class="donation-btn">
           <%= link_to request_supports_path(@request) do %>
             <%= image_tag 'book_note_empty.png' , size: '185x100', class: "donation-btn-png" %>
             <span class='donation-btn-text'>資金援助する</span>
-          <% end %>
-        </li>
-        <li class="spread-btn">
-          <%= link_to "" do %>
-            <%= image_tag 'book_note_empty.png' , size: '185x100', class: "spread-btn-png" %>
-            <span class='spread-btn-text'>拡散する</span>
           <% end %>
         </li>
       <% end %>
