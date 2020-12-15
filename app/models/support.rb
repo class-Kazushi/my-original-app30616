@@ -5,7 +5,7 @@ class Support < ApplicationRecord
   belongs_to :request
 
   with_options presence: true do
-    validates :price, format: { with: /\A[0-9]+\z/, message: :invalid_price_num }
+    validates :price, numericality: { greater_than_or_equal_to: 100, less_than_or_equal_to: 999999 }
     validates :token
   end
 end
